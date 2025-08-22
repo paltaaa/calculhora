@@ -1,0 +1,111 @@
+/* Reset y Variables Globales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Colores */
+    --primary-color: #2563eb;
+    --primary-dark: #1d4ed8;
+    --text-dark: #1f2937;
+    --text-light: #6b7280;
+    --white: #ffffff;
+    --gray-100: #f3f4f6;
+    --gray-200: #e5e7eb;
+    --gray-800: #1f2937;
+    --gray-900: #111827;
+
+    /* Tipografía */
+    --font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-size-sm: 0.875rem;
+    --font-size-base: 1rem;
+    --font-size-lg: 1.125rem;
+    --font-size-xl: 1.25rem;
+    --font-size-2xl: 1.5rem;
+    --font-size-3xl: 1.875rem;
+
+    /* Espaciado */
+    --spacing-1: 0.25rem;
+    --spacing-2: 0.5rem;
+    --spacing-3: 0.75rem;
+    --spacing-4: 1rem;
+    --spacing-5: 1.25rem;
+    --spacing-6: 1.5rem;
+    --spacing-8: 2rem;
+    --spacing-12: 3rem;
+    --spacing-16: 4rem;
+
+    /* Sombras */
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+
+    /* Transiciones */
+    --transition: all 0.3s ease;
+}
+
+body {
+    font-family: var(--font-family);
+    font-size: var(--font-size-base);
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: var(--white);
+}
+
+/* Botones */
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: var(--spacing-3) var(--spacing-5);
+    border: none;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
+}
+
+/* Contenido principal */
+.main-content {
+    margin-top: 80px;
+    /* Espacio para header fijo */
+}
+
+.section {
+    padding: var(--spacing-16) var(--spacing-4);
+    max-width: 1200px;
+    margin: 0 auto;
+    min-height: 500px;
+}
+
+.section:nth-child(even) {
+    background-color: var(--gray-100);
+}
+
+h1 {
+    color: var(--primary-color);
+    font-size: var(--font-size-3xl);
+    font-weight: 700;
+    margin-bottom: var(--spacing-4);
+}
+
+h2 {
+    font-size: var(--font-size-2xl);
+    font-weight: 600;
+    margin-bottom: var(--spacing-4);
+    color: var(--text-dark);
+}
+
+p {
+    color: var(--text-light);
+    margin-bottom: var(--spacing-4);
+}
