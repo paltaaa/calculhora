@@ -1,4 +1,4 @@
-/* Reset y Variables Globales */
+/* Reset y Variables Globales - Calculhora Ocean Fresh */
 * {
     margin: 0;
     padding: 0;
@@ -6,25 +6,62 @@
 }
 
 :root {
-    /* Colores */
-    --primary-color: #2563eb;
-    --primary-dark: #1d4ed8;
-    --text-dark: #1f2937;
-    --text-light: #6b7280;
+    /* COLORES PRINCIPALES - Ocean Fresh */
+    --ocean-50: #f0fdfa;
+    /* Fondo muy claro */
+    --ocean-100: #ccfbf1;
+    /* Fondo claro */
+    --ocean-200: #99f6e4;
+    /* Accento suave */
+    --ocean-300: #5eead4;
+    /* Accento */
+    --ocean-500: #14b8a6;
+    /* Principal */
+    --ocean-600: #0d9488;
+    /* Principal oscuro */
+    --ocean-700: #0f766e;
+    /* Muy oscuro */
+    --ocean-800: #134e4a;
+    /* Casi negro */
+    --ocean-900: #042f2e;
+    /* Negro */
+
+    /* GRADIENTES ESPECIALES - Soft & Modern */
+    --gradient-soft: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+    --gradient-ocean: linear-gradient(135deg, #5eead4 0%, #0d9488 100%);
+    --gradient-subtle: linear-gradient(135deg, #f0fdfa 0%, #ccfbf1 100%);
+
+    /* GRISES NEUTROS */
+    --gray-50: #f8fafc;
+    --gray-100: #f1f5f9;
+    --gray-200: #e2e8f0;
+    --gray-300: #cbd5e1;
+    --gray-400: #94a3b8;
+    --gray-500: #64748b;
+    --gray-600: #475569;
+    --gray-700: #334155;
+    --gray-800: #1e293b;
+    --gray-900: #0f172a;
+
+    /* COLORES PRINCIPALES MAPEADOS */
+    --primary-color: var(--ocean-500);
+    --primary-dark: var(--ocean-600);
+    --primary-light: var(--ocean-300);
+    --text-dark: var(--gray-800);
+    --text-light: var(--gray-600);
+    --text-muted: var(--gray-500);
     --white: #ffffff;
-    --gray-100: #f3f4f6;
-    --gray-200: #e5e7eb;
-    --gray-800: #1f2937;
-    --gray-900: #111827;
 
     /* Tipografía */
     --font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-size-xs: 0.75rem;
     --font-size-sm: 0.875rem;
     --font-size-base: 1rem;
     --font-size-lg: 1.125rem;
     --font-size-xl: 1.25rem;
     --font-size-2xl: 1.5rem;
     --font-size-3xl: 1.875rem;
+    --font-size-4xl: 2.25rem;
 
     /* Espaciado */
     --spacing-1: 0.25rem;
@@ -34,16 +71,32 @@
     --spacing-5: 1.25rem;
     --spacing-6: 1.5rem;
     --spacing-8: 2rem;
+    --spacing-10: 2.5rem;
     --spacing-12: 3rem;
     --spacing-16: 4rem;
+    --spacing-20: 5rem;
+    --spacing-24: 6rem;
 
-    /* Sombras */
+    /* Sombras Ocean */
     --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
     --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
     --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+    --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+    --shadow-ocean: 0 10px 25px -5px rgb(20 184 166 / 0.2);
+    --shadow-soft: 0 8px 32px rgba(168, 237, 234, 0.3);
+
+    /* Border Radius */
+    --radius-sm: 0.375rem;
+    --radius-md: 0.5rem;
+    --radius-lg: 0.75rem;
+    --radius-xl: 1rem;
+    --radius-2xl: 1.5rem;
+    --radius-full: 9999px;
 
     /* Transiciones */
     --transition: all 0.3s ease;
+    --transition-fast: all 0.15s ease;
+    --transition-slow: all 0.6s ease;
 }
 
 body {
@@ -51,25 +104,83 @@ body {
     font-size: var(--font-size-base);
     line-height: 1.6;
     color: var(--text-dark);
-    background-color: var(--white);
+    background: var(--ocean-50);
+    antialiased: true;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
-/* Botones */
+/* Botones Ocean Fresh */
 .btn-primary {
-    background-color: var(--primary-color);
+    background: var(--primary-color);
     color: var(--white);
-    padding: var(--spacing-3) var(--spacing-5);
+    padding: var(--spacing-3) var(--spacing-6);
     border: none;
-    border-radius: 0.5rem;
+    border-radius: var(--radius-lg);
     font-weight: 600;
+    font-size: var(--font-size-sm);
     cursor: pointer;
     transition: var(--transition);
     text-decoration: none;
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-2);
+    box-shadow: var(--shadow-md);
 }
 
 .btn-primary:hover {
-    background-color: var(--primary-dark);
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-ocean);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+}
+
+/* Botón especial con gradiente */
+.btn-special {
+    background: var(--gradient-soft);
+    color: var(--gray-700);
+    padding: var(--spacing-4) var(--spacing-8);
+    border: none;
+    border-radius: var(--radius-xl);
+    font-weight: 700;
+    font-size: var(--font-size-base);
+    cursor: pointer;
+    transition: var(--transition);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-2);
+    box-shadow: var(--shadow-soft);
+}
+
+.btn-special:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-xl);
+}
+
+/* Botón outline ocean */
+.btn-outline {
+    background: transparent;
+    color: var(--primary-color);
+    padding: var(--spacing-3) var(--spacing-6);
+    border: 2px solid var(--primary-color);
+    border-radius: var(--radius-lg);
+    font-weight: 600;
+    font-size: var(--font-size-sm);
+    cursor: pointer;
+    transition: var(--transition);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-2);
+}
+
+.btn-outline:hover {
+    background: var(--primary-color);
+    color: var(--white);
     transform: translateY(-1px);
     box-shadow: var(--shadow-md);
 }
@@ -81,31 +192,127 @@ body {
 }
 
 .section {
-    padding: var(--spacing-16) var(--spacing-4);
+    padding: var(--spacing-20) var(--spacing-4);
     max-width: 1200px;
     margin: 0 auto;
     min-height: 500px;
 }
 
+/* Alternancia de fondos con Ocean */
 .section:nth-child(even) {
-    background-color: var(--gray-100);
+    background: var(--gradient-subtle);
 }
 
+.section:nth-child(odd) {
+    background: var(--white);
+}
+
+/* Hero section especial */
+.section#inicio {
+    background: var(--gradient-soft);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: var(--spacing-24) var(--spacing-4);
+}
+
+/* Tipografía mejorada */
 h1 {
-    color: var(--primary-color);
-    font-size: var(--font-size-3xl);
-    font-weight: 700;
-    margin-bottom: var(--spacing-4);
+    color: var(--ocean-800);
+    font-size: var(--font-size-4xl);
+    font-weight: 800;
+    margin-bottom: var(--spacing-6);
+    line-height: 1.2;
+    letter-spacing: -0.025em;
 }
 
 h2 {
+    color: var(--ocean-700);
     font-size: var(--font-size-2xl);
+    font-weight: 700;
+    margin-bottom: var(--spacing-5);
+    line-height: 1.3;
+}
+
+h3 {
+    color: var(--ocean-600);
+    font-size: var(--font-size-xl);
     font-weight: 600;
     margin-bottom: var(--spacing-4);
-    color: var(--text-dark);
 }
 
 p {
     color: var(--text-light);
     margin-bottom: var(--spacing-4);
+    line-height: 1.7;
+}
+
+p.lead {
+    font-size: var(--font-size-lg);
+    color: var(--text-dark);
+    font-weight: 500;
+}
+
+/* Cards Ocean */
+.card {
+    background: var(--white);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-8);
+    box-shadow: var(--shadow-md);
+    transition: var(--transition);
+    border: 1px solid var(--ocean-100);
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-ocean);
+}
+
+.card-ocean {
+    background: var(--gradient-subtle);
+    border: 1px solid var(--ocean-200);
+}
+
+.card-special {
+    background: var(--gradient-soft);
+    border: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .section {
+        padding: var(--spacing-16) var(--spacing-4);
+    }
+
+    .section#inicio {
+        padding: var(--spacing-20) var(--spacing-4);
+        min-height: 80vh;
+    }
+
+    h1 {
+        font-size: var(--font-size-3xl);
+    }
+
+    h2 {
+        font-size: var(--font-size-xl);
+    }
+}
+
+@media (max-width: 480px) {
+    .section {
+        padding: var(--spacing-12) var(--spacing-3);
+    }
+
+    h1 {
+        font-size: var(--font-size-2xl);
+    }
+
+    .btn-primary,
+    .btn-outline {
+        width: 100%;
+        justify-content: center;
+    }
 }
