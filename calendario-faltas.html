@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendario de Faltas - Calculhora</title>
+    <meta name="description" content="Registra y gestiona tus faltas escolares de manera inteligente">
+    <meta name="theme-color" content="#f0fdfa">
+    
+    <!-- Preconnect para fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Estilos CSS -->
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/header/header.css">
+    <link rel="stylesheet" href="styles/calendar/calendar.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="assets/img/logos/calculhora.png" type="image/png">
+</head>
+<body>
+    <!-- HEADER SIMPLIFICADO -->
+    <header class="header">
+        <div class="header-container">
+            <!-- Logo -->
+            <div class="logo">
+                <img src="assets/img/logos/calculhora.png" alt="Calculhora Logo" class="logo-img">
+            </div>
+            
+            <!-- Navegación Simple -->
+            <nav class="nav-desktop">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">← Volver al Inicio</a></li>
+                    <li><a href="#calendario" class="nav-link active">Calendario</a></li>
+                </ul>
+            </nav>
+            
+            <!-- Acciones del Header -->
+            <div class="header-actions">
+                <!-- El toggle de tema se insertará aquí via JavaScript -->
+                <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Navegación Mobile -->
+        <nav class="nav-mobile" id="navMobile">
+            <ul class="nav-mobile-list">
+                <li><a href="index.html" class="nav-mobile-link">🏠 Inicio</a></li>
+                <li><a href="#calendario" class="nav-mobile-link">📅 Calendario</a></li>
+                <li><a href="#notas" class="nav-mobile-link">📝 Notas</a></li>
+                <li><a href="#estadisticas" class="nav-mobile-link">📊 Estadísticas</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="main-content">
+        <!-- HEADER DE LA APLICACIÓN -->
+        <section class="app-header">
+            <div class="app-header-container">
+                <div class="app-title">
+                    <h1>📅 Registro de Faltas</h1>
+                    <p>Gestiona tus faltas escolares de manera inteligente</p>
+                </div>
+                
+                <div class="app-stats">
+                    <div class="stat-card">
+                        <div class="stat-number" id="totalAbsences">0</div>
+                        <div class="stat-label">Faltas Totales</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="currentMonth">0</div>
+                        <div class="stat-label">Este Mes</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="remainingAllowed">20</div>
+                        <div class="stat-label">Permitidas</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- NAVEGACIÓN DE PESTAÑAS -->
+        <section class="tabs-navigation">
+            <div class="tabs-container">
+                <button class="tab-btn active" data-tab="calendario">
+                    📅 Calendario
+                </button>
+                <button class="tab-btn" data-tab="notas">
+                    📝 Notas
+                </button>
+                <button class="tab-btn" data-tab="estadisticas">
+                    📊 Estadísticas

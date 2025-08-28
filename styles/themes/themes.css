@@ -1,0 +1,496 @@
+/* SISTEMA DE TEMAS - MODO CLARO Y OSCURO */
+
+/* ================================
+   VARIABLES DE TEMA - MODO CLARO
+   ================================ */
+
+:root {
+    /* COLORES PRINCIPALES - Ocean Fresh (Modo Claro) */
+    --ocean-50: #f0fdfa;
+    --ocean-100: #ccfbf1;
+    --ocean-200: #99f6e4;
+    --ocean-300: #5eead4;
+    --ocean-500: #14b8a6;
+    --ocean-600: #0d9488;
+    --ocean-700: #0f766e;
+    --ocean-800: #134e4a;
+    --ocean-900: #042f2e;
+
+    /* GRADIENTES ESPECIALES */
+    --gradient-soft: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+    --gradient-ocean: linear-gradient(135deg, #5eead4 0%, #0d9488 100%);
+    --gradient-subtle: linear-gradient(135deg, #f0fdfa 0%, #ccfbf1 100%);
+
+    /* GRISES NEUTROS - Modo Claro */
+    --gray-50: #f8fafc;
+    --gray-100: #f1f5f9;
+    --gray-200: #e2e8f0;
+    --gray-300: #cbd5e1;
+    --gray-400: #94a3b8;
+    --gray-500: #64748b;
+    --gray-600: #475569;
+    --gray-700: #334155;
+    --gray-800: #1e293b;
+    --gray-900: #0f172a;
+
+    /* COLORES SEMÁNTICOS - Modo Claro */
+    --primary-color: var(--ocean-500);
+    --primary-dark: var(--ocean-600);
+    --primary-light: var(--ocean-300);
+    
+    /* TEXTO - Modo Claro */
+    --text-primary: #1a1a1a;
+    --text-secondary: #6b7280;
+    --text-muted: #9ca3af;
+    --text-inverse: #ffffff;
+    
+    /* FONDOS - Modo Claro */
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8f9fa;
+    --bg-tertiary: #f1f3f5;
+    --bg-quaternary: #e9ecef;
+    --bg-overlay: rgba(0, 0, 0, 0.5);
+    
+    /* BORDES - Modo Claro */
+    --border-light: #e9ecef;
+    --border-medium: #dee2e6;
+    --border-dark: #ced4da;
+    
+    /* COMPONENTES ESPECÍFICOS - Modo Claro */
+    --card-bg: var(--bg-primary);
+    --input-bg: var(--bg-primary);
+    --input-border: var(--border-medium);
+    --header-bg: rgba(240, 253, 250, 0.95);
+    --header-border: var(--ocean-200);
+    
+    /* SOMBRAS */
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+    --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+    --shadow-ocean: 0 10px 25px -5px rgb(20 184 166 / 0.2);
+    --shadow-soft: 0 8px 32px rgba(168, 237, 234, 0.3);
+}
+
+/* ================================
+   VARIABLES DE TEMA - MODO OSCURO
+   ================================ */
+
+[data-theme="dark"] {
+    /* COLORES PRINCIPALES - Ocean Fresh (Modo Oscuro) */
+    --ocean-50: #042f2e;
+    --ocean-100: #134e4a;
+    --ocean-200: #0f766e;
+    --ocean-300: #0d9488;
+    --ocean-500: #14b8a6;
+    --ocean-600: #5eead4;
+    --ocean-700: #99f6e4;
+    --ocean-800: #ccfbf1;
+    --ocean-900: #f0fdfa;
+
+    /* GRADIENTES ESPECIALES - Modo Oscuro */
+    --gradient-soft: linear-gradient(135deg, #1e293b 0%, #374151 100%);
+    --gradient-ocean: linear-gradient(135deg, #0d9488 0%, #14b8a6 100%);
+    --gradient-subtle: linear-gradient(135deg, #1e1e1e 0%, #252525 100%);
+
+    /* GRISES NEUTROS - Modo Oscuro */
+    --gray-50: #0f172a;
+    --gray-100: #1e293b;
+    --gray-200: #334155;
+    --gray-300: #475569;
+    --gray-400: #64748b;
+    --gray-500: #94a3b8;
+    --gray-600: #cbd5e1;
+    --gray-700: #e2e8f0;
+    --gray-800: #f1f5f9;
+    --gray-900: #f8fafc;
+
+    /* TEXTO - Modo Oscuro */
+    --text-primary: #e0e0e0;
+    --text-secondary: #b0b0b0;
+    --text-muted: #666666;
+    --text-inverse: #1a1a1a;
+    
+    /* FONDOS - Modo Oscuro */
+    --bg-primary: #121212;
+    --bg-secondary: #1e1e1e;
+    --bg-tertiary: #252525;
+    --bg-quaternary: #2a2a2a;
+    --bg-overlay: rgba(0, 0, 0, 0.7);
+    
+    /* BORDES - Modo Oscuro */
+    --border-light: #333333;
+    --border-medium: #444444;
+    --border-dark: #555555;
+    
+    /* COMPONENTES ESPECÍFICOS - Modo Oscuro */
+    --card-bg: var(--bg-secondary);
+    --input-bg: var(--bg-quaternary);
+    --input-border: var(--border-medium);
+    --header-bg: rgba(30, 30, 30, 0.95);
+    --header-border: var(--border-light);
+    
+    /* SOMBRAS - Modo Oscuro */
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.3);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.4);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.5);
+    --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.6);
+    --shadow-ocean: 0 10px 25px -5px rgb(20 184 166 / 0.3);
+    --shadow-soft: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+/* ================================
+   COLORES DE CATEGORÍAS
+   ================================ */
+
+:root {
+    /* Enfermedad - Modo Claro */
+    --category-illness-bg: #ffcdd2;
+    --category-illness-text: #c62828;
+    --category-illness-border: rgba(198, 40, 40, 0.3);
+}
+
+[data-theme="dark"] {
+    /* Enfermedad - Modo Oscuro */
+    --category-illness-bg: rgba(198, 40, 40, 0.2);
+    --category-illness-text: #ef9a9a;
+    --category-illness-border: rgba(239, 154, 154, 0.3);
+}
+
+:root {
+    /* Transporte - Modo Claro */
+    --category-transport-bg: #bbdefb;
+    --category-transport-text: #1565c0;
+    --category-transport-border: rgba(21, 101, 192, 0.3);
+}
+
+[data-theme="dark"] {
+    /* Transporte - Modo Oscuro */
+    --category-transport-bg: rgba(21, 101, 192, 0.2);
+    --category-transport-text: #90caf9;
+    --category-transport-border: rgba(144, 202, 249, 0.3);
+}
+
+:root {
+    /* Asuntos Personales - Modo Claro */
+    --category-personal-bg: #c8e6c9;
+    --category-personal-text: #2e7d32;
+    --category-personal-border: rgba(46, 125, 50, 0.3);
+}
+
+[data-theme="dark"] {
+    /* Asuntos Personales - Modo Oscuro */
+    --category-personal-bg: rgba(46, 125, 50, 0.2);
+    --category-personal-text: #a5d6a7;
+    --category-personal-border: rgba(165, 214, 167, 0.3);
+}
+
+:root {
+    /* Clima - Modo Claro */
+    --category-weather-bg: #b3e5fc;
+    --category-weather-text: #0277bd;
+    --category-weather-border: rgba(2, 119, 189, 0.3);
+}
+
+[data-theme="dark"] {
+    /* Clima - Modo Oscuro */
+    --category-weather-bg: rgba(2, 119, 189, 0.2);
+    --category-weather-text: #81d4fa;
+    --category-weather-border: rgba(129, 212, 250, 0.3);
+}
+
+:root {
+    /* Otro - Modo Claro */
+    --category-other-bg: #d1c4e9;
+    --category-other-text: #4527a0;
+    --category-other-border: rgba(69, 39, 160, 0.3);
+}
+
+[data-theme="dark"] {
+    /* Otro - Modo Oscuro */
+    --category-other-bg: rgba(69, 39, 160, 0.2);
+    --category-other-text: #b39ddb;
+    --category-other-border: rgba(179, 157, 219, 0.3);
+}
+
+/* ================================
+   TRANSICIONES DE TEMA
+   ================================ */
+
+*,
+*::before,
+*::after {
+    transition: 
+        background-color 0.3s ease,
+        border-color 0.3s ease,
+        color 0.3s ease,
+        box-shadow 0.3s ease,
+        opacity 0.3s ease;
+}
+
+/* ================================
+   APLICACIÓN DE VARIABLES
+   ================================ */
+
+body {
+    background: var(--bg-primary);
+    color: var(--text-primary);
+}
+
+/* Texto */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--text-primary);
+}
+
+p {
+    color: var(--text-secondary);
+}
+
+.text-muted {
+    color: var(--text-muted);
+}
+
+/* Cards */
+.card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-light);
+    box-shadow: var(--shadow-md);
+}
+
+.card:hover {
+    box-shadow: var(--shadow-ocean);
+}
+
+/* Inputs */
+input, textarea, select {
+    background: var(--input-bg);
+    color: var(--text-primary);
+    border: 1px solid var(--input-border);
+}
+
+input:focus, textarea:focus, select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(20, 184, 166, 0.1);
+}
+
+/* Header */
+.header {
+    background: var(--header-bg);
+    border-bottom: 1px solid var(--header-border);
+}
+
+/* Secciones alternadas */
+.section:nth-child(even) {
+    background: var(--bg-secondary);
+}
+
+.section:nth-child(odd) {
+    background: var(--bg-primary);
+}
+
+/* ================================
+   BADGES DE CATEGORÍA
+   ================================ */
+
+.badge-illness {
+    background: var(--category-illness-bg);
+    color: var(--category-illness-text);
+    border: 1px solid var(--category-illness-border);
+}
+
+.badge-transport {
+    background: var(--category-transport-bg);
+    color: var(--category-transport-text);
+    border: 1px solid var(--category-transport-border);
+}
+
+.badge-personal {
+    background: var(--category-personal-bg);
+    color: var(--category-personal-text);
+    border: 1px solid var(--category-personal-border);
+}
+
+.badge-weather {
+    background: var(--category-weather-bg);
+    color: var(--category-weather-text);
+    border: 1px solid var(--category-weather-border);
+}
+
+.badge-other {
+    background: var(--category-other-bg);
+    color: var(--category-other-text);
+    border: 1px solid var(--category-other-border);
+}
+
+/* ================================
+   ELEMENTOS ESPECÍFICOS MODO OSCURO
+   ================================ */
+
+[data-theme="dark"] .nav-link {
+    color: var(--text-secondary);
+}
+
+[data-theme="dark"] .nav-link:hover {
+    color: var(--primary-color);
+    background: rgba(94, 234, 212, 0.1);
+}
+
+[data-theme="dark"] .logo-img {
+    filter: brightness(1.1) contrast(1.1);
+}
+
+/* Días del calendario */
+[data-theme="dark"] .calendar-day {
+    background: var(--bg-secondary);
+    border-color: var(--border-light);
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .calendar-day:hover {
+    background: var(--bg-quaternary);
+}
+
+[data-theme="dark"] .calendar-day.has-absence {
+    background: #d32f2f;
+    color: white;
+}
+
+[data-theme="dark"] .calendar-day.current {
+    border-color: var(--primary-color);
+    border-width: 2px;
+}
+
+/* Días vacíos */
+[data-theme="dark"] .calendar-day.empty {
+    background: var(--bg-quaternary);
+    color: var(--text-muted);
+}
+
+/* ================================
+   BOTÓN DE CAMBIO DE TEMA
+   ================================ */
+
+.theme-toggle {
+    position: relative;
+    background: var(--card-bg);
+    border: 2px solid var(--border-medium);
+    border-radius: var(--radius-full);
+    width: 60px;
+    height: 32px;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 4px;
+    box-shadow: var(--shadow-sm);
+}
+
+.theme-toggle:hover {
+    box-shadow: var(--shadow-md);
+    border-color: var(--primary-color);
+}
+
+.theme-toggle-switch {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    transition: var(--transition);
+    left: 4px;
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+}
+
+[data-theme="dark"] .theme-toggle-switch {
+    left: calc(100% - 28px);
+}
+
+.theme-icon {
+    font-size: 12px;
+    opacity: 0.7;
+    transition: var(--transition);
+}
+
+.theme-toggle:hover .theme-icon {
+    opacity: 1;
+}
+
+/* Iconos del toggle */
+.theme-toggle .sun-icon {
+    margin-left: 2px;
+}
+
+.theme-toggle .moon-icon {
+    margin-right: 2px;
+}
+
+[data-theme="dark"] .theme-toggle .sun-icon {
+    opacity: 0.3;
+}
+
+[data-theme="dark"] .theme-toggle .moon-icon {
+    opacity: 1;
+}
+
+/* ================================
+   ANIMACIONES ESPECÍFICAS
+   ================================ */
+
+@keyframes themeTransition {
+    0% {
+        opacity: 0.8;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.theme-transitioning {
+    animation: themeTransition 0.3s ease-in-out;
+}
+
+/* ================================
+   MEJORAS VISUALES MODO OSCURO
+   ================================ */
+
+[data-theme="dark"] {
+    /* Scrollbar personalizado */
+    scrollbar-color: var(--border-medium) var(--bg-secondary);
+}
+
+[data-theme="dark"] ::-webkit-scrollbar {
+    width: 8px;
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-track {
+    background: var(--bg-secondary);
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb {
+    background: var(--border-medium);
+    border-radius: var(--radius-full);
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb:hover {
+    background: var(--border-dark);
+}
+
+/* Selección de texto */
+[data-theme="dark"] ::selection {
+    background: rgba(94, 234, 212, 0.3);
+    color: var(--text-primary);
+}
+
+/* Focus outline mejorado */
+[data-theme="dark"] *:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}

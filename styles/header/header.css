@@ -1,22 +1,22 @@
-/* HEADER STYLES - Ocean Fresh */
+/* HEADER STYLES - Ocean Fresh con Soporte de Temas */
 
 .header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    background: rgba(240, 253, 250, 0.95);
-    /* ocean-50 */
+    background: var(--header-bg);
     backdrop-filter: blur(20px);
-    border-bottom: 1px solid var(--ocean-200);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--header-border);
     z-index: 1000;
     transition: var(--transition);
 }
 
 .header.scrolled {
-    background: rgba(240, 253, 250, 0.98);
+    background: var(--header-bg);
     box-shadow: var(--shadow-ocean);
-    border-bottom-color: var(--ocean-300);
+    border-bottom-color: var(--border-medium);
 }
 
 .header-container {
@@ -38,12 +38,15 @@
 
 .logo-img {
     height: 50px;
-    /* Tamaño más proporcionado */
     width: auto;
     max-width: 140px;
     object-fit: contain;
     transition: var(--transition);
     filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+[data-theme="dark"] .logo-img {
+    filter: brightness(1.1) contrast(1.1) drop-shadow(0 2px 4px rgba(255, 255, 255, 0.1));
 }
 
 .logo h2 {
@@ -69,7 +72,7 @@
 
 .nav-link {
     text-decoration: none;
-    color: var(--ocean-700);
+    color: var(--text-secondary);
     font-weight: 500;
     font-size: var(--font-size-base);
     position: relative;
@@ -81,7 +84,15 @@
 .nav-link:hover {
     color: var(--primary-color);
     background: rgba(94, 234, 212, 0.1);
-    /* ocean-300 con transparencia */
+}
+
+[data-theme="dark"] .nav-link {
+    color: var(--text-secondary);
+}
+
+[data-theme="dark"] .nav-link:hover {
+    color: var(--primary-color);
+    background: rgba(94, 234, 212, 0.15);
 }
 
 /* Subrayado animado Ocean */
@@ -109,7 +120,7 @@
     gap: var(--spacing-4);
 }
 
-/* Botón CTA en header con gradiente especial */
+/* Botón CTA en header */
 .header-actions .btn-primary {
     background: var(--gradient-ocean);
     padding: var(--spacing-3) var(--spacing-5);
@@ -122,6 +133,82 @@
     background: var(--primary-dark);
     transform: translateY(-2px);
     box-shadow: var(--shadow-ocean);
+}
+
+/* BOTÓN DE TOGGLE DE TEMA */
+.theme-toggle {
+    position: relative;
+    background: var(--card-bg);
+    border: 2px solid var(--border-medium);
+    border-radius: var(--radius-full);
+    width: 60px;
+    height: 32px;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 4px;
+    box-shadow: var(--shadow-sm);
+    margin-right: var(--spacing-2);
+}
+
+.theme-toggle:hover {
+    box-shadow: var(--shadow-md);
+    border-color: var(--primary-color);
+    transform: scale(1.05);
+}
+
+.theme-toggle:active {
+    transform: scale(0.98);
+}
+
+.theme-toggle-switch {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    transition: var(--transition);
+    left: 4px;
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    z-index: 2;
+}
+
+[data-theme="dark"] .theme-toggle-switch {
+    left: calc(100% - 28px);
+    background: var(--primary-color);
+}
+
+.theme-icon {
+    font-size: 12px;
+    opacity: 0.7;
+    transition: var(--transition);
+    z-index: 1;
+}
+
+.theme-toggle:hover .theme-icon {
+    opacity: 1;
+}
+
+.theme-toggle .sun-icon {
+    margin-left: 2px;
+}
+
+.theme-toggle .moon-icon {
+    margin-right: 2px;
+}
+
+[data-theme="dark"] .theme-toggle .sun-icon {
+    opacity: 0.3;
+}
+
+[data-theme="dark"] .theme-toggle .moon-icon {
+    opacity: 1;
 }
 
 /* MENÚ HAMBURGUESA */
@@ -138,13 +225,13 @@
 }
 
 .menu-toggle:hover {
-    background: var(--ocean-100);
+    background: var(--bg-tertiary);
 }
 
 .menu-toggle span {
     width: 25px;
     height: 3px;
-    background: var(--ocean-600);
+    background: var(--text-secondary);
     transition: var(--transition);
     border-radius: var(--radius-full);
 }
@@ -166,10 +253,11 @@
 /* NAVEGACIÓN MOBILE */
 .nav-mobile {
     display: none;
-    background: var(--white);
-    border-top: 1px solid var(--ocean-200);
+    background: var(--card-bg);
+    border-top: 1px solid var(--border-light);
     box-shadow: var(--shadow-lg);
     backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
 }
 
 .nav-mobile.active {
@@ -189,7 +277,7 @@
 
 .nav-mobile-link {
     text-decoration: none;
-    color: var(--ocean-700);
+    color: var(--text-secondary);
     font-weight: 500;
     font-size: var(--font-size-lg);
     display: block;
@@ -202,7 +290,7 @@
 .nav-mobile-link:hover {
     background: var(--gradient-subtle);
     color: var(--primary-color);
-    border-color: var(--ocean-200);
+    border-color: var(--border-light);
     transform: translateX(4px);
 }
 
@@ -238,6 +326,32 @@
     .header-container {
         padding: 0 var(--spacing-4);
     }
+
+    /* Ajustar orden de elementos en mobile */
+    .header-actions {
+        order: 3;
+    }
+
+    .theme-toggle {
+        order: 2;
+        margin-right: var(--spacing-3);
+        width: 50px;
+        height: 28px;
+    }
+
+    .theme-toggle-switch {
+        width: 20px;
+        height: 20px;
+        font-size: 8px;
+    }
+
+    [data-theme="dark"] .theme-toggle-switch {
+        left: calc(100% - 24px);
+    }
+
+    .menu-toggle {
+        order: 4;
+    }
 }
 
 /* Mobile */
@@ -260,6 +374,22 @@
         font-size: var(--font-size-base);
         padding: var(--spacing-3);
     }
+
+    .theme-toggle {
+        width: 45px;
+        height: 24px;
+        margin-right: var(--spacing-2);
+    }
+
+    .theme-toggle-switch {
+        width: 18px;
+        height: 18px;
+        font-size: 7px;
+    }
+
+    [data-theme="dark"] .theme-toggle-switch {
+        left: calc(100% - 21px);
+    }
 }
 
 /* Efectos de scroll mejorados */
@@ -276,6 +406,7 @@
 .nav-link.active {
     color: var(--primary-color);
     background: rgba(94, 234, 212, 0.15);
+    font-weight: 600;
 }
 
 .nav-link.active::after {
@@ -284,19 +415,104 @@
 
 .nav-mobile-link.active {
     background: var(--gradient-ocean);
-    color: var(--white);
+    color: var(--text-inverse);
     border-color: var(--primary-color);
+    font-weight: 600;
 }
 
-/* Efecto de glassmorphism en scroll */
+/* Efecto de glassmorphism mejorado en scroll */
 .header.scrolled {
-    background: rgba(240, 253, 250, 0.8);
+    background: var(--header-bg);
     backdrop-filter: blur(25px);
     -webkit-backdrop-filter: blur(25px);
 }
 
-/* Mejora visual para el logo */
+[data-theme="dark"] .header.scrolled {
+    background: rgba(18, 18, 18, 0.95);
+    box-shadow: var(--shadow-xl);
+    border-bottom-color: var(--border-medium);
+}
+
+[data-theme="dark"] .nav-mobile {
+    background: var(--bg-secondary);
+    border-top-color: var(--border-light);
+}
+
+[data-theme="dark"] .menu-toggle:hover {
+    background: var(--bg-quaternary);
+}
+
+/* Transición suave entre temas para el header */
+.header * {
+    transition: 
+        background-color 0.3s ease,
+        border-color 0.3s ease,
+        color 0.3s ease,
+        box-shadow 0.3s ease,
+        filter 0.3s ease;
+}
+    background: rgba(30, 30, 30, 0.9);
+    border-bottom-color: var(--border-medium);
+}
+
+/* Mejora visual para el logo con hover */
 .logo-img:hover {
     transform: scale(1.05);
     filter: drop-shadow(0 4px 8px rgba(20, 184, 166, 0.3));
+}
+
+[data-theme="dark"] .logo-img:hover {
+    filter: brightness(1.2) contrast(1.1) drop-shadow(0 4px 8px rgba(20, 184, 166, 0.4));
+}
+
+/* Notificación de cambio de tema */
+.theme-notification {
+    background: var(--card-bg);
+    color: var(--text-primary);
+    border: 1px solid var(--border-light);
+    box-shadow: var(--shadow-lg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+}
+
+/* Mejoras para accesibilidad */
+.theme-toggle:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+.nav-link:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+    border-radius: var(--radius-md);
+}
+
+.menu-toggle:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+    border-radius: var(--radius-md);
+}
+
+/* Animaciones adicionales para el theme toggle */
+.theme-toggle-switch {
+    animation: none;
+}
+
+.theme-toggle:hover .theme-toggle-switch {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+/* Estados especiales para modo oscuro */
+[data-theme="dark"] .header {
+    background: var(--header-bg);
+    border-bottom-color: var(--border-light);
 }
